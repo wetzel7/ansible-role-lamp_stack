@@ -1,7 +1,4 @@
 ---
-- name: Import SSH hardening tasks
-  ansible.builtin.import_tasks: ssh.yml
-
 - name: Import firewall tasks
   ansible.builtin.import_tasks: firewall.yml
 
@@ -19,3 +16,6 @@
 
 - name: Import web files tasks
   ansible.builtin.import_tasks: web_files.yml
+  
+- name: Import SSH hardening tasks
+  ansible.builtin.import_tasks: ssh.yml

@@ -1,5 +1,6 @@
 ---
 galaxy_info:
+  author: wetzel7
   role_name: lamp_stack
   description: Deploys a LAMP stack with guestbook web application on Rocky Linux
   min_ansible_version: "2.9"
@@ -9,6 +10,4 @@ galaxy_info:
         - 8
         - 9
 
-dependencies:
-  - community.mysql
-  - ansible.posix
+dependencies: []
