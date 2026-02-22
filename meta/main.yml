@@ -10,6 +10,4 @@ galaxy_info:
         - 8
         - 9
 
-dependencies:
-  - community.mysql
-  - ansible.posix
+dependencies: []
