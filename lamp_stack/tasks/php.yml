@@ -1,0 +1,13 @@
+---
+- name: Install PHP and php-mysqlnd
+  ansible.builtin.yum:
+    name:
+      - php
+      - php-mysqlnd
+    state: present
+
+- name: Start and enable php-fpm
+  ansible.builtin.service:
+    name: php-fpm
+    state: started
+    enabled: true

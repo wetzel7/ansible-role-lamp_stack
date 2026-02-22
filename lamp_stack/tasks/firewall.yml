@@ -1,0 +1,10 @@
+---
+- name: Enable HTTP and HTTPS ports in firewalld
+  ansible.posix.firewalld:
+    port: "{{ item }}/tcp"
+    permanent: true
+    state: enabled
+  loop:
+    - 80
+    - 443
+  notify: Reload firewalld

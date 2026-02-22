@@ -1,0 +1,29 @@
+---
+- name: Create application database
+  community.mysql.mysql_db:
+    name: "{{ db_name }}"
+    state: present
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
+- name: Create database user
+  community.mysql.mysql_user:
+    name: "{{ db_user }}"
+    password: "{{ db_pass }}"
+    priv: "{{ db_name }}.*:ALL"
+    state: present
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
+- name: Create guestbook table
+  community.mysql.mysql_query:
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+    login_db: "{{ db_name }}"
+    query: |
+      CREATE TABLE IF NOT EXISTS guestbook (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          name VARCHAR(100),
+          message TEXT,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );

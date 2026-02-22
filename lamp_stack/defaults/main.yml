@@ -1,0 +1,11 @@
+---
+# MySQL credentials
+mysql_root_password: "SavCone255!"
+
+# Application database config
+db_name: "lamp_stack_delicious_and_stuff"
+db_user: "cluck"
+db_pass: "cluckchair"
+
+# Web root
+web_root: "/var/www/html"

@@ -1,0 +1,21 @@
+---
+- name: Import SSH hardening tasks
+  ansible.builtin.import_tasks: ssh.yml
+
+- name: Import firewall tasks
+  ansible.builtin.import_tasks: firewall.yml
+
+- name: Import HTTPD tasks
+  ansible.builtin.import_tasks: httpd.yml
+
+- name: Import MySQL tasks
+  ansible.builtin.import_tasks: mysql.yml
+
+- name: Import PHP tasks
+  ansible.builtin.import_tasks: php.yml
+
+- name: Import database setup tasks
+  ansible.builtin.import_tasks: db_setup.yml
+
+- name: Import web files tasks
+  ansible.builtin.import_tasks: web_files.yml

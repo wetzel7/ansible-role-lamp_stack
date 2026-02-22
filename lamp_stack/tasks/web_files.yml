@@ -1,0 +1,23 @@
+---
+- name: Copy index.php to web root
+  ansible.builtin.copy:
+    src: index.php
+    dest: "{{ web_root }}/index.php"
+    mode: '0644'
+
+- name: Copy save.php to web root
+  ansible.builtin.copy:
+    src: save.php
+    dest: "{{ web_root }}/save.php"
+    mode: '0644'
+
+- name: Copy basicwebpage.html to web root as index.html
+  ansible.builtin.copy:
+    src: basicwebpage.html
+    dest: "{{ web_root }}/index.html"
+    mode: '0644'
+
+- name: Reload httpd to apply changes
+  ansible.builtin.service:
+    name: httpd
+    state: reloaded
